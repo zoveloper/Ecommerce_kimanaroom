@@ -7,7 +7,6 @@ import axios from 'axios'
 
 
 function ProductScreen({ match }) {
-
     const [product, setProduct] = useState([])
 
     useEffect(() => {
