@@ -20,9 +20,9 @@ function ProductScreen({ match }) {
 
     return (
         <div>
-            <Link to='/' className='btn btn-light my-3'>Go Back</Link>
+            <Link to='/product/1/' className='btn btn-light my-3'>Go Back</Link>
             {loading?
-                <loader/>
+                <Loader/>
                 : error
                 ?<h2>{error}</h2>
                 :(
