@@ -33,7 +33,7 @@ def registerUser(request):
     data = request.data
 
     try:
-        print('DATA',data)
+        print('fire',data)
         user = User.objects.create(
             first_name=data['name'],
             username=data['email'],
