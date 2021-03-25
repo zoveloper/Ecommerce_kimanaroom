@@ -95,7 +95,7 @@ function OrderScreen({match, history}) {
                                 {'  '}
                                 {order.shippingAddress.country},
                             </p>
-                            {order.isDeliverd ? (
+                            {order.isDelivered ? (
                                 <Message variant='success'>Delivered on {order.deliveredAt}</Message>
                             ):(
                                 <Message variant='warning'>Not Delivered {order.deliveredAt}</Message>
