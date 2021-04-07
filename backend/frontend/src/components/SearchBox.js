@@ -10,7 +10,7 @@ function SearchBox() {
     const submitHandler= (e) =>{
         e.preventDefault()
         if(keyword){
-            history.push(`/?keyword=${keyword}`)
+            history.push(`/?keyword=${keyword}&page=1`)
 
         }else{
             history.push(history.push(history.location.pathname))
@@ -22,7 +22,7 @@ function SearchBox() {
                 type='text'
                 name='q'
                 onChange={ (e) => setKeyword(e.target.value)}
-                className='mr-sm-2 ml-sm-5'
+                className='ml-sm-2 ml-sm-5'
             ></Form.Control>
         
 
