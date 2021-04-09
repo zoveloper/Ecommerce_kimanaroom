@@ -202,3 +202,5 @@ AWS_STORAGE_BUCKET_NAME = 'kimanaroom-bucket'
 if os.getcwd() =='/app':
     DEBUG = False
 
+#Activate Django-Heroku
+django_heroku.settings(locals())
