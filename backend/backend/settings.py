@@ -14,7 +14,11 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 import os
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -23,9 +27,10 @@ import os
 SECRET_KEY = '#(g=0$k&47z@=nlj$c8x=3pbxg6iw5!2x=%&6_&yn&093#(p1e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://kimanaroom.herokuapp.com/']
 
 
 # Application definition
@@ -40,6 +45,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'storages',
+
     'base.apps.BaseConfig',
 ]
 
@@ -84,6 +91,7 @@ SIMPLE_JWT = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
 
 
@@ -124,8 +132,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'kimanaroom',
+        'USER':'zoveloper',
+        'PASSWORD': 'june1234',
+        'HOST':'kimanaroom-identifier.c9fik6vebtbh.us-east-2.rds.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
@@ -175,6 +187,18 @@ STATICFILES_DIRS = [
     BASE_DIR / 'frontend/build/static'
 ]
 
-MEDIA_ROOT = 'static/images'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 CORS_ALLOW_ALL_ORIGINS =True 
+
+AWS_QUERYSTRING_AUTH= False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = 'AKIA4ZJTMD36IEMCVYP4'
+AWS_SECRET_ACCESS_KEY = 'ch0O8doI33157Sa/eK52IN1rswmBNdWE+DjHn2T'
+
+AWS_STORAGE_BUCKET_NAME = 'kimanaroom-bucket'
+
+if os.getcwd() =='/app':
+    DEBUG = False
+
