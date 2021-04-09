@@ -30,7 +30,7 @@ SECRET_KEY = '#(g=0$k&47z@=nlj$c8x=3pbxg6iw5!2x=%&6_&yn&093#(p1e'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://kimanaroom.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'kimanaroom.herokuapp.com']
 
 
 # Application definition
