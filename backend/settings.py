@@ -135,7 +135,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'kimanaroom',
         'USER':'zoveloper',
-        'PASSWORD': os.environ.get('DB_PASS'),
+        'PASSWORD': 'june1234',
         'HOST':'kimanaroom-identifier.c9fik6vebtbh.us-east-2.rds.amazonaws.com',
         'PORT':'5432'
     }
@@ -194,8 +194,8 @@ CORS_ALLOW_ALL_ORIGINS =True
 AWS_QUERYSTRING_AUTH= False
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = 'AKIA4ZJTMD36IEMCVYP4'
+AWS_SECRET_ACCESS_KEY = 'ch0O8doI33157Sa/eK52IN1rswmBNdWE+DjHn2T'
 
 AWS_STORAGE_BUCKET_NAME = 'kimanaroom-bucket'
 
