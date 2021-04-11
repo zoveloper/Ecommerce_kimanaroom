@@ -16,15 +16,19 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 import os
+import environ
 import django_heroku
 
+#Initialise Env
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#(g=0$k&47z@=nlj$c8x=3pbxg6iw5!2x=%&6_&yn&093#(p1e'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -194,8 +198,8 @@ CORS_ALLOW_ALL_ORIGINS =True
 AWS_QUERYSTRING_AUTH= False
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_ACCESS_KEY_ID = 'AKIA4ZJTMD36IEMCVYP4'
-AWS_SECRET_ACCESS_KEY = 'ch0O8doI33157Sa/eK52IN1rswmBNdWE+DjHn2T'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
 AWS_STORAGE_BUCKET_NAME = 'kimanaroom-bucket'
 
@@ -204,3 +208,4 @@ if os.getcwd() =='/app':
 
 #Activate Django-Heroku
 django_heroku.settings(locals())
+
