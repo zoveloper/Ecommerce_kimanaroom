@@ -138,9 +138,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'kimanaroom',
-        'USER':'zoveloper',
-        'PASSWORD': 'june1234',
-        'HOST':'kimanaroom-identifier.c9fik6vebtbh.us-east-2.rds.amazonaws.com',
+        'USER':'gqyyyfqnejrosm',
+        'PASSWORD': '68da653d2b89e2c1249f3d1e5a1f5561f69df463f3b67ba37fea1effd05a3348',
+        'HOST':'ec2-52-21-153-207.compute-1.amazonaws.com',
         'PORT':'5432'
     }
 }
